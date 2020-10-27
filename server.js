@@ -1,7 +1,7 @@
 const express = require('express')
 const Sequelize = require('sequelize')
 
-const sequelize = new Sequelize('profile', 'root', 'Crenvustila1*', {
+const sequelize = new Sequelize('profile', 'root', 'Crenvustila1*', { //adding the password as param.
     dialect: "mysql",
     host: "localhost"
 })
