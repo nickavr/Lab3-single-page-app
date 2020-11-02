@@ -37,7 +37,7 @@ app.get('/createdb', (request, response) => {
 //definire endpoint POST /messages
 app.post('/messages', (request, response) => {
     Messages.create(request.body).then((result) => {
-        response.status(201).json(result)
+        response.status(201).send("Object inserted")
     }).catch((err) => {
         response.status(500).send("resource not created")
     })
@@ -86,7 +86,7 @@ app.delete('/messages/:id', (request, response) => {
     Messages.findByPk(request.params.id).then((message) => {
         if(message) {
             message.destroy().then((result) => {
-                response.status(204).send()
+                response.status(204).send("Object deleted")
             }).catch((err) => {
                 console.log(err)
                 response.status(500).send('database error')
